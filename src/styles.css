@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #282828;
+}
+
+form {
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #383838;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2 {
+    padding: 10px;
+    color: #F9A826;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    color: #F9A826;
+}
+
+input,
+select {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #F9A826;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+button#submit {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #F9A826;
+    color: #282828;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+button#submit:hover {
+    background-color: #C6891F;
+}
+
+button#cancel {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #FF4C4C;
+    color: #282828;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+button#cancel:hover {
+    background-color: #CC3C3C;
+}
