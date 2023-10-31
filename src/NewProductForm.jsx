@@ -10,6 +10,9 @@ export function NewProductForm() {
         price: ""
     });
 
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -21,7 +24,15 @@ export function NewProductForm() {
             category: "Men",
             quantity: "",
             price: ""
-        })
+        });
+
+        setIsSubmitted(true);
+        setShowAlert(true);
+
+        setTimeout(() => {
+            setIsSubmitted(false);
+            setShowAlert(false);
+        }, 2500);
 
     }
 
@@ -38,6 +49,8 @@ export function NewProductForm() {
             quantity: "",
             price: "",
         })
+
+        setIsSubmitted(false);
     }
 
     return (
@@ -56,14 +69,20 @@ export function NewProductForm() {
             </select>
 
             <label htmlFor="quantity">Quantity</label>
-            <input type="text" id="quantity" name="quantity" value={newProduct.quantity} onChange={handleChange} required />
+            <input type="number" id="quantity" name="quantity" value={newProduct.quantity} onChange={handleChange} required />
 
             <label htmlFor="price">Price</label>
-            <input type="text" id="price" name="price" value={newProduct.price} onChange={handleChange} required />
+            <input type="number" id="price" name="price" value={newProduct.price} onChange={handleChange} required />
 
             <button type="submit" id="submit" onSubmit={handleSubmit}>Submit</button>
 
             <button type="reset" id="cancel" onClick={handleReset}>Cancel</button>
+
+            {showAlert &&
+                <div className="alert">
+                    Form successfully submitted!
+                </div>
+            }
 
         </form>
     )
