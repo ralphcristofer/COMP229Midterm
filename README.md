@@ -21,4 +21,5 @@ Web App Creation using Vite + React
 > npm run dev
 
 7. Create a react JSX form
+   
 ![ReactJSXForm](https://github.com/ralphcristofer/COMP229Midterm/assets/46301746/fa89ca6a-cb14-4150-9c9e-0aaedab8b552)
