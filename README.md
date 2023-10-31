@@ -1,9 +1,9 @@
 # COMP229 – Web Application Development
 
-Midterm
-COMPONENT-JSX- REACT FORMS
+**Midterm
+COMPONENT-JSX- REACT FORMS**
 
-Web App Creation using Vite + React
+**Web App Creation using Vite + React**
 
 1. Create Vite
 > npm create vite@latest
