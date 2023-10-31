@@ -1,7 +1,10 @@
+// Importing the useState hook from React
 import { useState } from "react";
 
+// Defining the NewProductForm component
 export function NewProductForm() {
 
+    // Using the useState hook to manage the state of the new product form
     const [newProduct, setNewProduct] = useState({
         name: "",
         description: "",
@@ -10,14 +13,20 @@ export function NewProductForm() {
         price: ""
     });
 
+    // Using the useState hook to manage the state of form submission
     const [isSubmitted, setIsSubmitted] = useState(false);
+    
+    // Using the useState hook to manage the state of alert visibility
     const [showAlert, setShowAlert] = useState(false);
 
+    // Defining a function to handle form submission
     function handleSubmit(e) {
         e.preventDefault();
 
+        // Logging the new product data to the console
         console.log(JSON.stringify(newProduct));
 
+        // Resetting the new product data after form submission
         setNewProduct({
             name: "",
             description: "",
@@ -26,9 +35,13 @@ export function NewProductForm() {
             price: ""
         });
 
+        // Updating the state to reflect that the form has been submitted
         setIsSubmitted(true);
+        
+        // Showing an alert after form submission
         setShowAlert(true);
 
+        // Hiding the alert after 2.5 seconds
         setTimeout(() => {
             setIsSubmitted(false);
             setShowAlert(false);
@@ -36,12 +49,18 @@ export function NewProductForm() {
 
     }
 
+    // Defining a function to handle changes in form inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
+        
+        // Updating the new product data when an input changes
         setNewProduct((prev) => ({ ...prev, [name]: value }));
     }
 
+    // Defining a function to handle form reset
     function handleReset(e) {
+        
+        // Resetting the new product data when the form is reset
         setNewProduct({
             name: "",
             description: "",
@@ -50,11 +69,14 @@ export function NewProductForm() {
             price: "",
         })
 
+        // Updating the state to reflect that the form has not been submitted
         setIsSubmitted(false);
     }
 
+    // The component returns a form with various inputs and buttons for submitting and resetting the form
     return (
         <form className="new-product" onSubmit={handleSubmit}>
+            
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" value={newProduct.name} onChange={handleChange} required />
 
